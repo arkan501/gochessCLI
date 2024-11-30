@@ -1,10 +1,10 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 
-    b "gitlab.com/Arkan501/arkanchesslib/board"
-    p "gitlab.com/Arkan501/arkanchesslib/pieces"
+	b "gitlab.com/Arkan501/arkanchesslib/board"
+	p "gitlab.com/Arkan501/arkanchesslib/pieces"
 )
 
 func GameEngine() {
@@ -31,22 +31,22 @@ func GameEngine() {
 	fmt.Println("Arkan's Chess CLI")
 	chessBoard.DrawBoard()
 
-    switch chessBoard.GameState(currentPlayer) {
-    case 1:
-        fmt.Printf(
-            "%s is in Checkmate. %s wins!",
-            p.ColourString[playerBlack],
-            p.ColourString[playerWhite],
-            )
-    case 2:
-        fmt.Printf(
-            "%s is in Checkmate. %s wins!",
-            p.ColourString[playerWhite],
-            p.ColourString[playerBlack],
-            )
-    case 3:
-        fmt.Printf("draw!")
-    }
+	switch chessBoard.GameState(currentPlayer) {
+	case 1:
+		fmt.Printf(
+			"%s is in Checkmate. %s wins!",
+			p.ColourString[playerBlack],
+			p.ColourString[playerWhite],
+		)
+	case 2:
+		fmt.Printf(
+			"%s is in Checkmate. %s wins!",
+			p.ColourString[playerWhite],
+			p.ColourString[playerBlack],
+		)
+	case 3:
+		fmt.Printf("draw!")
+	}
 }
 
 func chooseMove(colour p.Colour, chessBoard *b.Board) {
